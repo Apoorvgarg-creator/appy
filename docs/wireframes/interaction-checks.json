@@ -1,0 +1,31 @@
+{
+  "passed": 16,
+  "tests": [
+    "Initial views render; home has goal-first composer, three task rows and collapsed examples",
+    "Invalid headless desktop and controller routes refuse admission",
+    "Composer input survives navigation and escapes injected text",
+    "Editable plan preserves scope, links adjacent validation errors and resets dialog scroll between steps",
+    "Locked Mac blocks desktop but permits reviewed scoped file tasks",
+    "Approval expiry blocks action, fresh review permits exactly one approval",
+    "Deny preserves downloadable local notes and cannot later approve stale request",
+    "Offline work queues, reconnect pauses, explicit resume starts",
+    "Takeover fences desktop work; handback leaves task paused until explicit resume",
+    "Stop all blocks task admission, old approvals and resurrection; reconnect acknowledges stop",
+    "Stopping release cancels pending approval without global stop",
+    "Pairing checks identity, gives no access and derives path for each OS",
+    "Completed task has outcome before timeline; local download filenames and MIME type match",
+    "Same-view renders preserve open disclosures and repeated action focus; route changes reset disclosures",
+    "Toast is visible, escaped task titles render as text, and search routes correctly",
+    "Downloaded Blob bytes contain synthetic artifact text and valid simulation activity JSON"
+  ],
+  "reviewDate": "2026-10-14",
+  "method": "Temporary Node VM with a mock document; source closure exposed only in memory. Simulated DOM replacements exercise disclosure/focus logic; synthetic download Blob bytes are inspected.",
+  "source": "app.js",
+  "sourceSha256": "184e3284bc0d387d2522af0ff05d11b3ca0563f09f91f07e68f34354739d7910",
+  "generatedFragments": 16,
+  "limitations": [
+    "This harness does not verify browser rendering, native focus behavior or native event ordering. Browser checks are recorded separately.",
+    "Mock DOM assertions verify requested insertion position and ARIA links, not visual placement or screen-reader announcements.",
+    "No real devices, backend, network, credential or security controls are tested."
+  ]
+}

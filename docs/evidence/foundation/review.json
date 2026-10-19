@@ -1,0 +1,88 @@
+{
+  "version": "0.1.0",
+  "date": "2026-10-14",
+  "contract": "../../14-local-foundation.md",
+  "targetViewports": [
+    "1440x1000",
+    "390x844"
+  ],
+  "overallStatus": "automated-checks-pass; static-renders-reviewed; live-browser-blocked",
+  "automated": {
+    "go": "12 test groups pass with -race, including 20 cancellation races",
+    "node": "5 tests pass: actual handler contract flow, schema bounds/local refs, 2 retry cases",
+    "build": "Strict TypeScript, generated types, Go vet and Vite production build pass"
+  },
+  "accessibility": {
+    "status": "partial",
+    "evidence": "Static native labels, headings and touch sizes inspected. Primary phone buttons 44px high; navigation approximately 58px. Native focus, keyboard, screen readers and live dialogs have not been exercised in the new app."
+  },
+  "responsive": {
+    "status": "pass",
+    "evidence": "Static React render using real Go handler responses at 1440x1000 and 390x844. No horizontal overflow in Home/result; Inter 400/500/600 loaded. Home heading/composer/recent work x20 on phone. Result Download button visible at y390\u2013434 on phone."
+  },
+  "contentStates": {
+    "loading": {
+      "status": "unverified",
+      "evidence": "Live browser interaction unavailable. Go handler and client tests are separate from this visual gate."
+    },
+    "empty": {
+      "status": "unverified",
+      "evidence": "Live browser interaction unavailable. Go handler and client tests are separate from this visual gate."
+    },
+    "error": {
+      "status": "unverified",
+      "evidence": "Live browser interaction unavailable. Go handler and client tests are separate from this visual gate."
+    },
+    "partial": {
+      "status": "unverified",
+      "evidence": "Live browser interaction unavailable. Go handler and client tests are separate from this visual gate."
+    },
+    "success": {
+      "status": "unverified",
+      "evidence": "Live browser interaction unavailable. Go handler and client tests are separate from this visual gate."
+    },
+    "permission": {
+      "status": "unverified",
+      "evidence": "Live browser interaction unavailable. Go handler and client tests are separate from this visual gate."
+    }
+  },
+  "renderedEvidence": [
+    {
+      "viewport": "1440x1000",
+      "artifact": "home-desktop.png",
+      "observation": "Static, noninteractive React home-desktop rendered from actual handler responses."
+    },
+    {
+      "viewport": "390x844",
+      "artifact": "home-mobile.png",
+      "observation": "Static, noninteractive React home-mobile rendered from actual handler responses."
+    },
+    {
+      "viewport": "1440x1000",
+      "artifact": "result-desktop.png",
+      "observation": "Static, noninteractive React result-desktop rendered from actual handler responses."
+    },
+    {
+      "viewport": "390x844",
+      "artifact": "result-mobile.png",
+      "observation": "Static, noninteractive React result-mobile rendered from actual handler responses."
+    }
+  ],
+  "limitations": [
+    "TCP bind to 127.0.0.1 denied by execution environment. No live HTTP browser or Safari journey tested.",
+    "Integrated Browser plugin failed with missing sandboxPolicy metadata. ECC Chrome DevTools inspected local static pages.",
+    "Static pages contain no JavaScript; observed layout does not establish React event, polling, dialog or download behavior.",
+    "The first deployment target is Mac mini plus iPhone/iPad controllers; actual chip/RAM/macOS and model selection are pending."
+  ],
+  "sourceSha256": {
+    "contracts/openapi.json": "80870debffdcb0046e4f6b4548e29c4f99fd585f91c5845a53874b2db8326078",
+    "web/src/App.tsx": "b86cb0239f572d539f5284c1709f1e3c7a44494d09481f3061258aa5f0c024e2",
+    "web/src/styles.css": "752c3d2dbb7c6ce31cea14cde65d329979f914c5bfa20d14d5887e23a8cc9c89",
+    "internal/hub/store.go": "3568b88d1c89e19c267607c1a40f39b8d1aecdf72a7e4cbc669f4db6e0c3b2cd",
+    "internal/hub/http.go": "f42ba521cedfd416a3816e23385a251d37c688cd6215250a8d486245d97fec45"
+  },
+  "evidenceChecker": {
+    "exitCode": 1,
+    "reason": "Missing live accessibility and content-state browser observations. Static layout review and automated API checks do not satisfy that gate."
+  }
+}

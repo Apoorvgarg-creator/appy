@@ -1,0 +1,54 @@
+{
+  "surface": "Appy personal agent workspace, interactive local concept",
+  "userJob": "Delegate a bounded task to an owned machine and return to a useful result, resolving only decisions that need a person.",
+  "primaryAction": "Enter a goal, review the suggested plan and access, then start the simulated task.",
+  "hierarchy": [
+    "Describe a task",
+    "Review the plan and access before starting",
+    "Pending decisions first in a compact task list",
+    "Result first; access and activity available on request"
+  ],
+  "direction": "Neutral charcoal workspace; restrained periwinkle actions; local Inter font; one 8px rectangular radius; consistent left alignment and spacing; no promotional side rail.",
+  "references": [
+    "docs/13-design-research.md",
+    "https://www.nngroup.com/articles/progressive-disclosure/",
+    "https://carbondesignsystem.com/guidelines/color/overview/",
+    "https://linear.app/now/behind-the-latest-design-refresh",
+    "https://rsms.me/inter/",
+    "ECC frontend-design-direction, product-lens, click-path-audit, frontend-a11y"
+  ],
+  "targetViewports": [
+    "1440x1000",
+    "390x844"
+  ],
+  "constraints": [
+    "No runtime external asset, font, analytics or production-action requests; bundled Inter is local.",
+    "One obvious primary action per stage",
+    "Advanced permissions disclosed before execution",
+    "Connectivity distinct from readiness",
+    "Keyboard and native dialog semantics",
+    "Reduced-motion support",
+    "No native-desktop folder confinement or instant offline-stop claims",
+    "Home contains a composer, collapsed examples and three task rows; no device/model/sample rail",
+    "Body text 15px, primary buttons 14px, metadata 13px; form fields 15px desktop/16px phone; desktop shortcut hint 12px",
+    "Human-readable approval target, account, effect and full body stay visible; HTTP metadata may be disclosed"
+  ],
+  "contentStates": {
+    "loading": "A simulated task step shows bounded progress and clear simulation framing.",
+    "empty": "Filtered task/search/approval views explain the empty result and provide a next action.",
+    "error": "Incompatible route or missing goal blocks starting and explains recovery.",
+    "partial": "Offline and locked devices remain visible alongside available work.",
+    "success": "Completed simulated work exposes an output and an activity receipt.",
+    "permission": "Exact-action review and native desktop access explain authority before approval."
+  },
+  "version": "0.3",
+  "typography": {
+    "family": "Inter, locally bundled with SIL OFL license",
+    "body": "15px / 1.6",
+    "controls": "Primary buttons 14px / 1.5; form fields 15px desktop, 16px phone",
+    "metadata": "13px / 1.5",
+    "pageHeading": "28px / 1.3",
+    "homeHeading": "32px desktop, 28px phone"
+  },
+  "radius": "8px for rectangular surfaces and controls; circles only for step/status markers."
+}

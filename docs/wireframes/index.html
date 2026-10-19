@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#101114">
+  <meta name="description" content="Appy — a personal workspace for your agents and the machines you own. Interactive design concept.">
+  <title>Appy — your workspace</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to workspace</a>
+  <svg class="svg-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"/></symbol>
+    <symbol id="i-task" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="m8 8 1 1 2-2m2 1h3m-8 5h8m-8 4h5"/></symbol>
+    <symbol id="i-devices" viewBox="0 0 24 24"><rect x="2" y="4" width="15" height="12" rx="2"/><path d="M6 20h8m-4-4v4"/><rect x="16" y="10" width="6" height="11" rx="1.5"/></symbol>
+    <symbol id="i-review" viewBox="0 0 24 24"><path d="M4 4h16v13H7l-3 3Z"/><path d="m8 10 3 3 5-6"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="m10 13 4-4m-5 6-2 2a4 4 0 0 1-6-6l4-4a4 4 0 0 1 6 0m2 2 2-2a4 4 0 0 1 6 6l-4 4a4 4 0 0 1-6 0" transform="translate(1 1) scale(.9)"/></symbol>
+    <symbol id="i-activity" viewBox="0 0 24 24"><path d="M3 12h4l3-8 4 16 3-8h4"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-stop" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v1"/></symbol>
+  </svg>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Workspace navigation">
+      <button class="brand" data-view="home" aria-label="Appy home">
+        <svg class="brand-mark" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 19 10 5h4l6 14h-4l-1.2-3H9.2L8 19Zm6.5-6h3L12 9Z" fill="currentColor"/></svg>
+        <span>appy</span>
+      </button>
+      <div class="workspace-switch"><span class="workspace-monogram">R</span><span>Personal workspace</span></div>
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-item active" data-view="home" aria-current="page"><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg><span>Home</span></button>
+        <button class="nav-item" data-view="tasks"><svg class="icon" aria-hidden="true"><use href="#i-task"/></svg><span>Tasks</span><span class="nav-count" id="task-count">3</span></button>
+        <button class="nav-item" data-view="review"><svg class="icon" aria-hidden="true"><use href="#i-review"/></svg><span>Needs you</span><span class="nav-count attention" id="review-count">1</span></button>
+        <button class="nav-item" data-view="devices"><svg class="icon" aria-hidden="true"><use href="#i-devices"/></svg><span>Devices</span><span class="nav-count" id="device-count">4</span></button>
+        <button class="nav-item" data-view="connections"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg><span>Connections</span></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <button class="nav-item" data-view="activity"><svg class="icon" aria-hidden="true"><use href="#i-activity"/></svg><span>Activity</span></button>
+        <button class="nav-item" data-action="about"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span>About this demo</span></button>
+        <div class="sidebar-user"><span class="user-avatar">R</span><div><strong>River</strong><span>Personal workspace</span></div><span class="user-online" aria-label="Demo user"></span></div>
+      </div>
+    </aside>
+    <div class="workspace-main">
+      <header class="topbar">
+        <div class="breadcrumb"><span class="mobile-wordmark">appy.</span><strong id="breadcrumb">Home</strong></div>
+        <div class="topbar-actions">
+          <button class="concept-label" data-action="about" title="Fictional tasks. No real devices connected.">Demo<span class="demo-desktop"> workspace</span></button>
+          <button class="search-trigger" data-action="search" aria-label="Search tasks and devices"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg><span>Search</span><kbd>⌘ K</kbd></button>
+          <button class="mobile-controls icon-button" data-view="activity" aria-label="Activity and controls"><svg class="icon" aria-hidden="true"><use href="#i-activity"/></svg></button>
+          <span class="topbar-divider"></span>
+          <button class="stop-button" data-action="stop-all" title="Stop all simulated agent work"><svg class="icon" aria-hidden="true"><use href="#i-stop"/></svg><span>Stop all</span></button>
+        </div>
+      </header>
+      
+      <main class="content-shell">
+        <div id="global-status" aria-live="polite"></div>
+        <div id="main-content" tabindex="-1"></div>
+        <noscript><div class="empty-state"><h1>Your workspace needs JavaScript</h1><p>Enable JavaScript to explore this local interactive concept. No data is sent anywhere.</p></div></noscript>
+      </main>
+    </div>
+  </div>
+  <nav class="mobile-nav" aria-label="Mobile navigation">
+    <button class="active" data-view="home" aria-current="page"><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg><span>Home</span></button>
+    <button data-view="tasks"><svg class="icon" aria-hidden="true"><use href="#i-task"/></svg><span>Tasks</span></button>
+    <button data-view="review"><svg class="icon" aria-hidden="true"><use href="#i-review"/></svg><span>Needs you</span></button>
+    <button data-view="devices"><svg class="icon" aria-hidden="true"><use href="#i-devices"/></svg><span>Devices</span></button>
+    <button data-view="connections"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg><span>Connect</span></button>
+  </nav>
+  <dialog id="app-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-header"><div><p id="dialog-kicker" class="eyebrow"></p><h2 id="dialog-title"></h2></div><button class="icon-button" data-action="close-dialog" aria-label="Close dialog"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button></div>
+    <div id="dialog-body" class="dialog-body"></div>
+    <div id="dialog-footer" class="dialog-footer"></div>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "name": "appy",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.18.0" },
+  "scripts": {
+    "start": "node scripts/start.mjs",
+    "mobile": "node scripts/mobile-config.mjs",
+    "dev": "vite web --host 127.0.0.1",
+    "generate": "node scripts/generate-api.mjs",
+    "check:contract": "node scripts/generate-api.mjs --check",
+    "typecheck": "tsc -p web/tsconfig.json --noEmit",
+    "build": "npm run check:contract && npm run typecheck && vite build web",
+    "test": "node --test scripts/*.test.mjs web/src/*.test.ts",
+    "check": "npm run check:contract && npm run typecheck && npm test"
+  },
+  "dependencies": {
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "26.1.0",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.4",
+    "typescript": "5.9.3",
+    "vite": "8.3.1"
+  }
+}

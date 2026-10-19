@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-14",
+  "kind": "static-react-render",
+  "browser": "ECC Chrome DevTools",
+  "data": "Synthetic real Go gateway/fixture handler samples; temporary pairing sessions destroyed at process exit",
+  "viewports": [
+    {
+      "page": "pair",
+      "width": 390,
+      "height": 844,
+      "horizontal_overflow": false,
+      "primary_button_height": 48
+    },
+    {
+      "page": "pair",
+      "width": 834,
+      "height": 1194,
+      "horizontal_overflow": false,
+      "content_width": 476
+    },
+    {
+      "page": "invite",
+      "width": 1440,
+      "height": 1000
+    }
+  ],
+  "fonts": "Inter regular, medium, semibold loaded",
+  "checks": {
+    "go_race_groups": 26,
+    "node_checks": 23,
+    "contract": "local and mobile actual handler responses; approved artifact exact bytes; revoked download rejected",
+    "build": "passed"
+  },
+  "limitations": [
+    "Inert SSR HTML; controls not exercised",
+    "No real listening server or TLS connection",
+    "No physical iPhone/iPad, Safari, cellular, VoiceOver or cookie testing",
+    "Browser runtime failed initialization: missing sandboxPolicy; ECC used for static inspection"
+  ],
+  "source_sha256": {
+    "web/src/SessionGate.tsx": "bca581fd07d38de2f9b723bf63d01989ed40491ba4bad81d3975eba2ebe0ff58",
+    "web/src/MobileAccess.tsx": "cef1c452c0ebba014246db64fc332a649de3722b7d84c9f281e17e9fcf19e6f8",
+    "web/src/App.tsx": "e9384949271885effd1f25720f8f8cfdbefcfda93f96de6b13dee6a1c102b1a4",
+    "web/src/api.ts": "21ce68623d476f3892526633e7393eec80a6e844a0eafb58304c6e3d0ea52b07",
+    "web/src/styles.css": "78501ee4490a12cd601492c0ea24643ed5a56da9e10bb1b5f576a3f357f59bfd",
+    "internal/mobile/gateway.go": "2f99f1ee3ab6ba564ded2c3f1892aac3340f333c564f2bcbcac60408c0b011b8",
+    "internal/mobile/json.go": "b9153848d705cf4396133741f04fa584796001908d6fcb6473e728503702e92c",
+    "scripts/render-mobile-review.tsx": "6a5f26e64d71059e128cf8b68b6c619403411a5764981ac31c9537f0892b8c0b"
+  }
+}

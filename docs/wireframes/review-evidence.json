@@ -1,0 +1,113 @@
+{
+  "contract": "design-contract.json — v0.3: neutral dark workspace, local Inter, shared 8px rectangular corners, aligned content and progressive disclosure.",
+  "reviewDate": "2026-10-14",
+  "version": "0.3",
+  "targetViewports": [
+    "1440x1000",
+    "390x844"
+  ],
+  "overallStatus": "scoped-rendered-review-complete",
+  "method": "ECC Chrome DevTools on the local file URL: browser clicks, typing, native keyboard events, DOM measurements and local screenshots. Separate Node VM checks are in interaction-checks.json.",
+  "accessibility": {
+    "status": "pass",
+    "evidence": "Scoped checks: Cmd+K focuses the labelled search input; Tab moves to a result; Escape closes approval and returns focus to its Review trigger. Invalid headless-desktop selection expands the field group, focuses Tools, exposes aria-invalid and an adjacent described error. The next review resets scroll to zero and focuses its heading. Starting or completing a task focuses its page heading. Visible focus was inspected in error/search renders. Selected opaque contrast pairs: secondary text on canvas 7.68:1, on surface 7.15:1, primary button 8.62:1, focus on raised surface 7.96:1. Mobile primary controls measured at least 44px high, search 44x44, bottom navigation 75x58. This is not a complete WCAG audit."
+  },
+  "responsive": {
+    "status": "pass",
+    "evidence": "Actual CSS viewports 1440x1000 and 390x844. No horizontal overflow in tested Home, task detail, empty filter and mobile plan/review dialogs. Home heading/composer/task section share x=352 desktop and x=20 phone; task heading/result/disclosures share x=352. Inter 400/500/600 loaded locally. Mobile approval is 354px wide; footer ends at y=811 inside the 844px viewport. Long goal wraps within 312px dialog content without horizontal overflow."
+  },
+  "contentStates": {
+    "loading": {
+      "status": "pass",
+      "evidence": "Index engineering docs shows Output preview, In progress, document 128 of 206, Pause task and Stop task. A new mobile task also shows its pending output. Work is explicitly simulated."
+    },
+    "empty": {
+      "status": "pass",
+      "evidence": "Completed filter initially shows No tasks here and View all tasks. A search with no match shows No matches yet and a shorter-query suggestion; screenshot saved."
+    },
+    "error": {
+      "status": "pass",
+      "evidence": "Submitted Atlas with Supervised desktop. An adjacent error appears after focused Tools with advice to choose Moss or Field. Selecting Scoped file tools reaches access review. Screenshot saved."
+    },
+    "partial": {
+      "status": "pass",
+      "evidence": "Devices simultaneously shows Atlas Ready, Moss Needs unlock, Field Offline and Canvas Controller with distinct next actions. Screenshot saved; these are fictional states."
+    },
+    "success": {
+      "status": "pass",
+      "evidence": "Index task Demo controls > Simulate next step changes Output preview to Result with Complete and engineering-index.txt Download. Focus returns to the task heading. Screenshot saved. Download bytes were checked separately in the VM harness."
+    },
+    "permission": {
+      "status": "pass",
+      "evidence": "Mobile approval shows private repository, account, unpublished draft effect, existing tag, expiry and complete scrollable release body. Exact request metadata is separately disclosed. Deny and Create draft once remain in the visible footer. Plan access review precedes Start task and names execution, inference, scope and external-change requirements."
+    }
+  },
+  "renderedEvidence": [
+    {
+      "viewport": "1440x1000",
+      "artifact": "evidence/home-desktop.png",
+      "observation": "Final dark Home; aligned heading, composer and three task rows; collapsed examples."
+    },
+    {
+      "viewport": "390x844",
+      "artifact": "evidence/home-mobile.png",
+      "observation": "Phone Home; readable type, one primary task action and pending review first."
+    },
+    {
+      "viewport": "390x844",
+      "artifact": "evidence/approval-mobile.png",
+      "observation": "Private draft approval with persistent decision footer and scrollable review content."
+    },
+    {
+      "viewport": "390x844",
+      "artifact": "evidence/error-mobile.png",
+      "observation": "Focused invalid Tools selection with adjacent visible recovery message."
+    },
+    {
+      "viewport": "390x844",
+      "artifact": "evidence/long-goal-mobile.png",
+      "observation": "Long goal wraps in the access review; actions remain visible."
+    },
+    {
+      "viewport": "1440x1000",
+      "artifact": "evidence/task-desktop.png",
+      "observation": "Running task output first; controls visible; access, activity and demo sections collapsed."
+    },
+    {
+      "viewport": "1440x1000",
+      "artifact": "evidence/result-desktop.png",
+      "observation": "Completed sample with Download; heading, result and disclosures align."
+    },
+    {
+      "viewport": "1440x1000",
+      "artifact": "evidence/devices-desktop.png",
+      "observation": "Ready, locked, offline and controller states together."
+    },
+    {
+      "viewport": "1440x1000",
+      "artifact": "evidence/empty-desktop.png",
+      "observation": "Empty search with visible keyboard focus and recovery hint."
+    }
+  ],
+  "limitations": [
+    "No screen-reader session, 200% browser zoom, actual touch-device trial or participant usability study was performed.",
+    "Reduced-motion support was inspected in CSS; OS preference emulation was not exercised.",
+    "Contrast checks cover selected foreground/background pairs, not every possible state.",
+    "The secondary mobile Demo label measures 36x44px; primary actions and navigation meet the measured 44px height target.",
+    "No production backend, actual devices, private networking, credentials or authorization enforcement exist in this prototype.",
+    "The VM harness verifies simulated logic and Blob bytes; it does not replace native browser or production security tests.",
+    "The required integrated Browser plugin failed to initialize with missing sandboxPolicy metadata. ECC Chrome DevTools provided the actual browser observations above; the earlier local Chromium failure did not block this review.",
+    "Screenshots and bundled fonts stayed local; no source or screenshots were uploaded to an external rendering service."
+  ],
+  "evidenceChecker": {
+    "command": "node <ecc>/skills/frontend-design-direction/scripts/check-evidence.js docs/wireframes/review-evidence.json",
+    "exitCode": 0,
+    "result": "Evidence record complete; visual correctness still requires rendered inspection.",
+    "scope": "Record completeness and artifact existence; actual observations and limitations are recorded above."
+  },
+  "sourceSha256": {
+    "index.html": "10f62d613b763d5ad07088725a0f997f0477873d7b1a11b93edf1e52a5ad8a78",
+    "styles.css": "1d120da9cddecc41ad5f10e4f3ef3bde717dd784157fe90ce3851f01c935dc26",
+    "app.js": "184e3284bc0d387d2522af0ff05d11b3ca0563f09f91f07e68f34354739d7910"
+  }
+}
