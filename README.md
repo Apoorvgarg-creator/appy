@@ -2,7 +2,7 @@
 
 A proposed open-source control center for agents running on machines you own. Start a task from your phone, run local models on your Mac mini, use a permitted desktop when necessary, and return to evidence of what happened.
 
-**Status: runnable fixture controller with optional private mobile pairing.** The React controller and Go service persist tasks, execute a bundled fixture analysis, and produce reviewed downloads. An opt-in gateway adds expiring browser sessions for iPhone/iPad access through Tailscale Serve. Physical-device HTTPS validation, real device agents, model integration, and production identity remain pending. Appy is a working name; a project license has not been adopted.
+**Status: runnable fixture controller with optional private mobile pairing.** The React controller and Go service persist tasks, execute a bundled fixture analysis, and produce reviewed downloads. An opt-in gateway adds expiring browser sessions for iPhone/iPad access through Tailscale Serve. Physical-device HTTPS validation, real device agents, model integration, and production identity remain pending. Appy is a working name; the project is licensed under [Apache-2.0](LICENSE).
 
 ## Run the local foundation
 
